@@ -1,0 +1,1 @@
+GET localhost:8080/coffee_mug?priceRange=2&filterOperation=AND&displayName=Cup&mugType=mug type 1
