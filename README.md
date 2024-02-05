@@ -15,9 +15,9 @@ cd micronaut-inventory-project
 ```
 
 ### Build the project using Gradle:
-
+Make sure you check all properties are right in `src/test/resources/application-test.properties` and `src/main/resources/applicaiton.properties` 
 ```bash
-./gradlew build
+gradlew build
 ```
 
 ### Run the project:
@@ -28,10 +28,10 @@ java -jar build/libs/demo1-0.1-all.jar
 ```
 #### Using external application.properties and using environment variables
 ```bash
-java -Dmicronaut.config.files=application.properties -DMICRONAUT_SERVER_PORT=8080 -DMICRONAUT_DATASOURCE_DATABASE_NAME=FPL2 -jar demo1-0.1-all.jar
+java -Dmicronaut.config.files=application.properties -DMICRONAUT_SERVER_PORT=8081 -DMICRONAUT_DATASOURCE_DATABASE_NAME=FPL2 -jar demo1-0.1-all.jar
 ```
 
-The Micronaut application will start, and you can access the APIs at http://localhost:8080.
+The Micronaut application will start, and you can access the APIs at http://localhost:8081.
 
 
 ## APIs
@@ -56,7 +56,7 @@ Request body:
 
 #### `curl` Command
 ```bash
-curl --location 'http://localhost:8080/coffee_mug' \
+curl --location 'http://localhost:8081/coffee_mug' \
 --header 'Content-Type: application/json' \
 --data '{
     "quantity": 4,
@@ -101,7 +101,7 @@ Method: `GET`
 
 #### `curl` Command
 ```bash
-curl --location 'http://localhost:8080/coffee_mug?priceRange=2-3&filterOperation=AND&displayName=cup&mugType=espresso'
+curl --location 'http://localhost:8081/coffee_mug?priceRange=2-3&filterOperation=AND&displayName=cup&mugType=espresso'
 ```
 
 Response body:
@@ -153,7 +153,7 @@ Method: `GET`
 
 #### `curl` Command
 ```bash
-curl --location '/coffee_mug/pagination?priceRange=2-3&filterOperation=AND&displayName=cup&mugType=espresso&page=0&size=1'
+curl --location 'http://localhost:8081/coffee_mug/pagination?priceRange=2-3&filterOperation=AND&displayName=cup&mugType=espresso&page=0&size=1'
 ```
 
 Response body:
